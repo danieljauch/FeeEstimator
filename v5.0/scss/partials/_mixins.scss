@@ -1,0 +1,27 @@
+@mixin input-default {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  background: rgba($black, .033);
+  padding: .25em .5em;
+  font-size: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent transparent rgba($black, .5);
+  max-width: 100%;
+  margin-bottom: .5em;
+  transition: all .3s $cubic;
+}
+@mixin input-states {
+  &:hover, &:focus {
+    background: transparent;
+    border: 2px solid rgba($blue, .9);
+  }
+}
+@mixin appear-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

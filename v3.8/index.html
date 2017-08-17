@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+############################# FEE ESTIMATOR v3.8: #############################
+This is an app created to estimate the fees for specific permits for the City of Tacoma's Planning and Developent Services. Currently available permit types:
+	###### BUILDING PERMITS ######
+		- Building:
+			- Commercial:
+				- New
+				- Alteration
+			- Residential:
+				- New
+				- Alteration
+		- Sign
+		- Demo
+		- Plumbing
+	######## SITE PERMITS ########
+		- Site Dev
+		- Sewer
+		- Water
+		- Storm
+	###### LAND USE PERMITS ######
+		- Land Use
+Created by: Daniel Jauch, City of Tacoma PDS djauch@cityoftacoma.org
+Last update: 12.16.16
+-->
+<html lang="en">
+<head>
+	<title>Tacoma Permits - Fee estimator</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+</head>
+
+<body id="fe">
+	<!--[if lte IE 9]><div class="error-bar">Your browser is not compatible with this application, consider <a href="http://browsehappy.com/">updating your browser</a> for best results.</div><![endif]-->
+	<noscript><div class="error-bar">Your browser is currently not allowing this program to run, please click "Allow" below to enable JavaScript</div></noscript>
+	<main class="wrap">
+		<header class="site-header">
+			<h1>Fee Estimator</h1>
+			<div class="description-expand"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+			<div class="description open">
+				<p><b>This fee estimator is intended for informational purposes only</b> and will help you <b>estimate</b> what your permit fees will be.</p>
+				<p>Click on the <span class="underline">underlined blank spaces</span> in the sentences below to select from a dropdown menu of choices or enter a number value based off of what fits in the sentence.</p>
+				<p>Hover over <span class="green">green</span> question marks (<span class="green"><i class="fa fa-question" aria-hidden="true"></i></span>) to get more information about the item next to the icon.</p>
+				<p>If you need help, click on the <span class="green">Technical Issues</span> button at the bottom of the page and describe the problem above the dotted line.</p>
+			</div>
+		</header>
+		<section class="content-area">
+			<nav class="tab-links">
+				<ul>
+					<li class="active" id="pgfirst-pointer"><i class="fa fa-list" aria-hidden="true"></i> Choose permits</li>
+					<li id="pgmid-pointer"><i class="fa fa-mouse-pointer" aria-hidden="true"></i> Details<span id="details-num"></span></li>
+					<li id="pglast-pointer"><i class="fa fa-check-square-o" aria-hidden="true"></i> Summary</li>
+				</ul>
+				<article id="pgfirst" class="question-box active">
+					<h3>Pick your permits:</h3>
+					<p>Choose from the permits below. The questions on the following page with go through your selected permits individually.</p>
+					<form class="question-content">
+						<section class="permit-group">
+							<h4><i class="fa fa-caret-right" aria-hidden="true"></i><span>Building Permits</span></h4>
+							<section class="permit-category">
+								<div class="permit">
+									<input type="checkbox" name="bldCheck" id="bldCheck">
+									<label for="bldCheck">Building</label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Any work on a residential or commercial building, includes new construction, remodels, and / or additions.</div>
+										</div>
+									</span>
+								</div>
+								<div class="permit">
+									<input type="checkbox" name="signCheck" id="signCheck">
+									<label for="signCheck">Sign <span class="new">NEW</span></label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Advertising signage painted on buildings, freestanding, or sign structures attached to a building.</div>
+										</div>
+									</span>
+								</div>
+								<div class="permit">
+									<input type="checkbox" name="demoCheck" id="demoCheck">
+									<label for="demoCheck">Demolition <span class="new">NEW</span></label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Demolition of an entire building or structure.</div>
+										</div>
+									</span>
+								</div>
+								<div class="permit">
+									<input type="checkbox" name="plmCheck" id="plmCheck">
+									<label for="plmCheck">Plumbing</label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Relocate, remove, or new. Includes piping, toilets. Showers, sinks, dishwashers, laundry hookups, water heaters.</div>
+										</div>
+									</span>
+								</div>
+								<div class="permit">
+									<input type="checkbox" name="fireCheck" id="fireCheck">
+									<label for="fireCheck">Fire <span class="new">NEW</span></label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Installation of fire alarm, fire sprinkler, kitchen hood suppression, clean agent suppresion system, standpipe, pump, radio enhancement system, or smoke control.</div>
+										</div>
+									</span>
+								</div>
+							</section>
+						</section>
+						<section class="permit-group">
+							<h4><i class="fa fa-caret-right" aria-hidden="true"></i><span>Site Permits</span></h4>
+							<section class="permit-category">
+								<div class="permit">
+									<input type="checkbox" name="sitedevCheck" id="sitedevCheck">
+									<label for="sitedevCheck">Site Development <span class="new">NEW</span></label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>On-site grading, gravel, cut, and fill over 50 cubic ards, paving, parking striping, landscaping, stormater facilities.</div>
+										</div>
+									</span>
+								</div>
+								<div class="permit">
+									<input type="checkbox" name="sewerCheck" id="sewerCheck">
+									<label for="sewerCheck">Wastewater</label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Replacement, addition, or repair of connections from site to sewer main (side sewer).</div>
+										</div>
+									</span>
+								</div>
+								<div class="permit">
+									<input type="checkbox" name="wtrCheck" id="wtrCheck">
+									<label for="wtrCheck">Water</label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Replacement, addition, or repair of connections from the meter to the building for domestic water service.</div>
+										</div>
+									</span>
+								</div>
+								<div class="permit">
+									<input type="checkbox" name="stormCheck" id="stormCheck">
+									<label for="stormCheck">Surfacewater</label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Replacement, addition, or repair of connections from the site to the City stormwater system.</div>
+										</div>
+									</span>
+								</div>
+							</section>
+						</section>
+						<section class="permit-group">
+							<h4><i class="fa fa-caret-right" aria-hidden="true"></i><span>Land Use Permits</span></h4>
+							<section class="permit-category">
+								<div class="permit">
+									<input type="checkbox" name="landCheck" id="landCheck">
+									<label for="landCheck">Land Use <span class="new">NEW</span></label>
+									<span class="tooltip-wrapper front-page">
+										<i class="fa fa-question tooltip-pointer" aria-hidden="true"></i>
+										<div class="tooltip">
+											<div>Property line changes, zoning interpretations, and discretionary review.</div>
+										</div>
+									</span>
+								</div>
+							</section>
+						</section>
+					</form>
+					<button class="btn next"><span>Next </span><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				</article>
+				<article id="pglast" class="question-box">
+					<h3>Here's your estimation:</h3>
+					<div class="fee-details"></div>
+					<p class="summary" id="grand-total">Grand total estimation: <span class="money" id="grandTotal"></span></p>
+					<p class="extra-text">You may need additional permits such as electrical or mechanical that have separate costs. Some permits have additional hourly fees for inspections. If your project includes right-of-way work, you may require a separate right-of-way or work order permit (coming soon). The estimation above is only for the permits chosen on the first page.</p>
+					<p class="extra-text">Call <a href="tel:+12535915030" class="support-number"><i class="fa fa-phone" aria-hidden="true"></i> 253-591-5030</a> for more details.</p>
+					<section class="last-page-buttons">
+						<a class="btn ready" href="https://aca.accela.com/tacoma/" target="_blank">Take me to the application <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+						<a class="btn print" href="javascript:window.print()" target="_blank">Print <i class="fa fa-print" aria-hidden="true"></i></a>
+					</section>
+					<button class="btn back"><i class="fa fa-chevron-left" aria-hidden="true"></i><span> Back</span></button>
+					<button class="btn next"><span>Start over </span><i class="fa fa-undo" aria-hidden="true"></i></button>
+				</article>
+			</nav>
+		</section>
+		<footer>
+			<button class="btn" id="feedback"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span> Technical issues?</span></button>
+			<div id="version">v3.84 ~ Updated 12.16.16</div>
+		</footer>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script async src="https://use.fontawesome.com/0bf4fa8b93.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

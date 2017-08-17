@@ -1,0 +1,60 @@
+input {
+  @include input-states;
+  @include appear-none;
+  &[type="text"], &[type="number"], &[type="date"] {
+    @include input-default;
+  }
+  &[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: rgba($black, .1);
+    box-shadow: inset 0 0 4px rgba($black, .2);
+    border-radius: 2px;
+    border: 0;
+    transition: background .3s $cubic;
+  }
+  &[type="checkbox"]:checked {
+    border: 2px solid rgba($blue, .9);
+    background: rgba($black, .5);
+  }
+  &[type="number"] {
+    max-width: 120px;
+  }
+  &[type="date"]::-webkit-clear-button {
+    @include appear-none;
+    display: none;
+  }
+  &[type="date"]::-webkit-inner-spin-button,
+  &[type="date"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    cursor: pointer;
+  }
+}
+select {
+  @include input-default;
+  @include input-states;
+  &::-ms-expand {
+    display: none;
+  }
+  &:focus::-ms-value {
+    background: transparent;
+    color: $black;
+  }
+}
+input + label, select {
+  cursor: pointer;
+}
+.site-header {
+  line-height: 16px;
+  position: relative;
+  img {
+    display: none;
+    width: 100px;
+    position: absolute;
+    top: -51px;
+    left: -46px;
+    transform: rotate(-14deg);
+  }
+}

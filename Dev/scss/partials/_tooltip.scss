@@ -1,0 +1,80 @@
+.tooltip-wrapper {
+  position: relative;
+}
+.tooltip-pointer {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  color: rgba($green, .75);
+  transition: {
+    property: color, background, box-shadow;
+    duration: .3s;
+    timing-function: $cubic;
+  }
+  .front-page &:before {
+    margin: 3px 0 0 -1px;
+  }
+  .last-page &:before {
+    margin: 4px 0 0 -1px;
+  }
+  &:before {
+    display: block;
+  }
+  &:hover {
+    background: $green;
+    color: $white;
+    box-shadow: 2px 4px 10px rgba($black, .2);
+    z-index: 2;
+    &+.tooltip {
+      opacity: 1;
+    }
+  }
+  .front-page &:hover+.tooltip {
+    top: 10px;
+  }
+  .mid-page &:hover+.tooltip {
+    top: -5px;
+  }
+  .last-page &:hover+.tooltip {
+    top: -40px;
+  }
+  .front-page & {
+    top: -5px;
+    left: -5px;
+  }
+  .mid-page & {
+    top: -20px;
+    left: -10px;
+  }
+  .last-page & {
+    top: -45px;
+    left: -25px;
+  }
+}
+.tooltip {
+  background: rgba($white, .9);
+  padding: .5em 1em;
+  border-radius: 5px;
+  box-shadow: 2px 4px 10px rgba($black, .2);
+  font-size: 1rem;
+  width: 350px;
+  opacity: 0;
+  transition: opacity .3s $cubic;
+  position: absolute;
+  z-index: 1;
+  .front-page & {
+    top: -10000px;
+    left: -20px;
+  }
+  .mid-page & {
+    top: -10000px;
+    left: -185px;
+  }
+  .last-page & {
+    top: -10000px;
+    left: -12px;
+  }
+}

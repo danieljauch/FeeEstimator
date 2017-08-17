@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../scss/print.css",
+	"sources": [
+		"../scss/print.scss"
+	],
+	"sourcesContent": [
+		"@media print {\r\n  .tab-links ul, .question-box, .extra-text, .last-page-buttons, .btn, #version {\r\n    display: none;\r\n  }\r\n  #pglast {\r\n    display: block !important;\r\n    margin-top: -4rem;\r\n  }\r\n  .content-area {\r\n    background: #fff;\r\n    box-shadow: none;\r\n  }\r\n  .fee-item {\r\n    page-break-inside: avoid;\r\n  }\r\n  .fee-sub-items {\r\n    height: auto;\r\n    opacity: 1;\r\n    overflow: visible;\r\n    font-size: 1.1rem;\r\n  }\r\n  main {\r\n    margin: 1em auto 0;\r\n  }\r\n  i {\r\n    display: none !important;\r\n  }\r\n}\r\n"
+	],
+	"mappings": "AAAA,MAAM,CAAN,KAAK;;EACH,AAAW,UAAD,CAAC,EAAE,EAAE,AAAA,aAAa,EAAE,AAAA,WAAW,EAAE,AAAA,kBAAkB,EAAE,AAAA,IAAI,EAAE,AAAA,QAAQ,CAAC;IAC5E,OAAO,EAAE,IAAK;GACf;;EACD,AAAA,OAAO,CAAC;IACN,OAAO,EAAE,gBAAiB;IAC1B,UAAU,EAAE,KAAM;GACnB;;EACD,AAAA,aAAa,CAAC;IACZ,UAAU,EAAE,IAAK;IACjB,UAAU,EAAE,IAAK;GAClB;;EACD,AAAA,SAAS,CAAC;IACR,iBAAiB,EAAE,KAAM;GAC1B;;EACD,AAAA,cAAc,CAAC;IACb,MAAM,EAAE,IAAK;IACb,OAAO,EAAE,CAAE;IACX,QAAQ,EAAE,OAAQ;IAClB,SAAS,EAAE,MAAO;GACnB;;EACD,AAAA,IAAI,CAAC;IACH,MAAM,EAAE,UAAW;GACpB;;EACD,AAAA,CAAC,CAAC;IACA,OAAO,EAAE,eAAgB;GAC1B",
+	"names": []
+}
